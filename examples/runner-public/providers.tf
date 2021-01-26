@@ -1,14 +1,10 @@
 provider "aws" {
-  region  = "${var.aws_region}"
-  version = "2.13"
-}
-
-provider "template" {
-  version = "2.1.2"
+  region  = var.aws_region
+  version = "2.68"
 }
 
 provider "local" {
-  version = "1.2.2"
+  version = "1.4"
 }
 
 provider "null" {
@@ -16,5 +12,5 @@ provider "null" {
 }
 
 provider "tls" {
-  version = "2.0.1"
+  version = "2.2.0"
 }

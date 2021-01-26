@@ -1,0 +1,28 @@
+name: Verify
+on: 
+  push: 
+    branches:
+      - master
+      - develop
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: verify
+        run: |
+          source ./ci/bin/install.sh
+          ./ci/bin/verify.sh
+
+  verify-examples:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: verify-examples
+        run: |
+          source ./ci/bin/install.sh
+          ./ci/bin/verify-examples.sh
